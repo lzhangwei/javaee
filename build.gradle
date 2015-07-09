@@ -1,0 +1,43 @@
+allprojects {
+    apply plugin: 'idea'
+}
+
+subprojects {
+    apply plugin: 'java'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        testCompile group: 'junit', name: 'junit', version: '4.11'
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.4'
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'mysql:mysql-connector-java:5.1.36'
+    }
+}
+
+//task sql << {
+//    driverName = 'com.mysql.jdbc.Driver'
+//    Class.forName(driverName)
+//    groovy.sql.Sql sql = Sql.newInstance(
+//            'jdbc:postgresql://localhost:3306/user_management',
+//            'root',
+//            '',
+//            driverName
+//    )
+//    sql.execute 'DELETE FROM user'
+//    sql.execute 'insert into user values(null,\'hehe\', \'female\', \'abc@123.com\', 12)'
+//    sql.execute 'insert into user values(null,\'haha\', \'male\', \'abc@123.com\', 22)'
+//}
