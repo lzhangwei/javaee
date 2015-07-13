@@ -4,9 +4,9 @@ import java.io.*;
 import javax.servlet.http.*;
 import javax.servlet.*;
 
-import com.tw.core.Constance;
-import com.tw.core.User;
-import com.tw.core.UserDao;
+import com.tw.core.util.Constance;
+import com.tw.core.entity.User;
+import com.tw.core.dao.UserDao;
 
 public class UserServlet extends HttpServlet {
 
@@ -33,12 +33,12 @@ public class UserServlet extends HttpServlet {
             int userId = Integer.parseInt(request.getParameter("userId"));
             userDao.deleteUser(userId);
             request.setAttribute("users", userDao.getUsers());
-            RequestDispatcher view = request.getRequestDispatcher("/index.jsp");
+            RequestDispatcher view = request.getRequestDispatcher("/users.jsp");
             view.forward(request, response);
 
         } else {
 
-            RequestDispatcher view = request.getRequestDispatcher("/index.jsp");
+            RequestDispatcher view = request.getRequestDispatcher("/users.jsp");
             view.forward(request, response);
 
         }
@@ -64,7 +64,7 @@ public class UserServlet extends HttpServlet {
             userDao.updateUser(user);
         }
 
-        RequestDispatcher view = request.getRequestDispatcher("/index.jsp");
+        RequestDispatcher view = request.getRequestDispatcher("/users.jsp");
         request.setAttribute("users", userDao.getUsers());
         view.forward(request, response);
     }

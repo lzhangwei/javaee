@@ -1,4 +1,4 @@
-package com.tw.core;
+package com.tw.core.util;
 
 import org.apache.commons.dbcp.BasicDataSource;
 

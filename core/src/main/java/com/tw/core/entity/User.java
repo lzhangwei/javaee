@@ -1,14 +1,25 @@
-package com.tw.core;
+package com.tw.core.entity;
 
 /**
  * Created by weizhang on 7/7/15.
  */
 public class User {
-    int id;
-    String name;
-    String gender;
-    String email;
-    int age;
+    private int id;
+    private String name;
+    private String gender;
+    private String email;
+    private int age;
+
+    public User() {
+    }
+
+    public User(int id, String name, String gender, String email, int age) {
+        this.id = id;
+        this.name = name;
+        this.gender = gender;
+        this.email = email;
+        this.age = age;
+    }
 
     public int getId() {
         return id;
@@ -49,6 +60,5 @@ public class User {
     public void setAge(int age) {
         this.age = age;
     }
-
 
 }

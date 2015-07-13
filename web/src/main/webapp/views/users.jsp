@@ -11,9 +11,11 @@
 <html>
 <head>
     <title></title>
+    <script type="text/javascript" src="lib/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="lib/js/users.js"></script>
 </head>
 <body>
-<a href="user.jsp">添加</a>
+<a href="views/user.jsp">添加</a>
 <table border=1>
     <thead>
     <tr>
@@ -33,8 +35,8 @@
             <td><c:out value="${user.gender}"/></td>
             <td><c:out value="${user.email}"/></td>
             <td><c:out value="${user.age}"/></td>
-            <td><a href="UserServlet?action=updateUser&userId=<c:out value="${user.id}"/>">更新</a></td>
-            <td><a href="UserServlet?action=deleteUser&userId=<c:out value="${user.id}"/>">删除</a></td>
+            <td><button onclick="deleteUser(${user.id})">删除</button></td>
+            <td><button onclick="updateUser(${user.id},'${user.name}','${user.gender}','${user.email}','${user.age}')">更新</button></td>
         </tr>
     </c:forEach>
     </tbody>

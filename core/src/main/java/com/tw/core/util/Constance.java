@@ -1,4 +1,4 @@
-package com.tw.core;
+package com.tw.core.util;
 
 /**
  * Created by weizhang on 7/8/15.

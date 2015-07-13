@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS users ;
 
 CREATE TABLE users(
   id int auto_increment primary key,
-  name varchar(20) NOT NULL ,
+  name varchar(20) NOT NULL,
   gender varchar(10),
   email varchar(50),
   age int
