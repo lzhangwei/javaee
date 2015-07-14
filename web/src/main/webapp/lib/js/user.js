@@ -16,36 +16,4 @@ $(document).ready(function () {
         $('#userId').attr("value", params[4]);
     }
 
-    //$('#addUser').submit(function (e) {
-    //
-    //    e.preventDefault();
-    //
-    //    var data = {};
-    //
-    //    $.each(this, function (i, v) {
-    //        var input = $(v);
-    //        if (input.val() != "") {
-    //            var value = input.val();
-    //            if (input.name == "id") {
-    //                value = parseInt(input.val());
-    //            }
-    //            data[input.attr("name")] = value;
-    //        }
-    //    });
-    //
-    //    $.ajax({
-    //        contentType: 'application/json; charset=utf-8',
-    //        type: 'POST',
-    //        url: '/web/users',
-    //        dataType: 'json',
-    //        data: JSON.stringify(data),
-    //        success: function(responseData, textStatus){
-    //            console.log("post success" + responseData);
-    //
-    //            console.log("post success" + textStatus);
-    //            //window.location.href = "/web/views/users.jsp";
-    //        }
-    //    });
-    //
-    //});
 });

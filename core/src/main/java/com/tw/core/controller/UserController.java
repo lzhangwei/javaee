@@ -69,19 +69,7 @@ public class UserController {
         }
 
     }
-
-//    @RequestMapping(value = "/users", method = RequestMethod.POST)
-//    public @ResponseBody ResponseEntity<String> addUser(@RequestBody User user) {
-//
-//        if (user.getId() != 0) {
-//            userService.updateUser(user);
-//        } else {
-//            userService.addUser(user);
-//        }
-//
-//        return new ResponseEntity<String>("success", HttpStatus.OK);
-//    }
-
+    
     @RequestMapping(value = "/users", method = RequestMethod.POST)
     public ModelAndView addUser(@RequestParam String id,
                                 @RequestParam String name,
