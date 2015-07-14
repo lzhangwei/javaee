@@ -15,7 +15,8 @@
     <script type="text/javascript" src="lib/js/users.js"></script>
 </head>
 <body>
-<a href="views/user.jsp">添加</a>
+<a href="/web/logout">退出登录</a>
+<a href="/web/user">添加</a>
 <table border=1>
     <thead>
     <tr>

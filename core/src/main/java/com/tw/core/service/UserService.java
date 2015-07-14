@@ -29,4 +29,8 @@ public class UserService {
         userDao.updateUser(user);
     }
 
+    public boolean login(String name, String password) {
+        return userDao.login(name, password);
+    }
+
 }

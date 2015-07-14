@@ -82,4 +82,15 @@ public class UserDao {
 
         return users.get(0);
     }
+
+    public boolean login(String name, String password) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+
+        Query query = session.createSQLQuery("select * from users WHERE name = '" + name +"' and password = '" + password + "'").addEntity(User.class);
+        List<User> users = query.list();
+
+        session.close();
+
+        return users.size() > 0 ? true : false;
+    }
 }

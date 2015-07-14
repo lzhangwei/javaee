@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    var str = location.href.toString().toLowerCase();
+    var str = location.href.toString();
     var num = str.indexOf("?");
     if (num > 0) {
         str = str.substr(num + 1);

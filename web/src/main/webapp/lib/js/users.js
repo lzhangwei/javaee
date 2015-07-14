@@ -2,8 +2,12 @@ function deleteUser(id) {
     $.ajax({
         url: '/web/users?id=' + id,
         type: 'DELETE',
-        success: function () {
-            window.location.reload();
+        success: function (data) {
+            if(data == 'success') {
+                window.location.reload();
+            } else {
+                window.location.href = "/web/login"
+            }
         }
     });
 }
