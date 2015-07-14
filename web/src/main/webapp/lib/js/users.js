@@ -12,10 +12,6 @@ function deleteUser(id) {
     });
 }
 
-function updateUser(id, name, gender, email, age) {
-    window.location.href = '/web/views/user.jsp?name=' + name
-        + '&gender=' + gender
-        + '&email=' + email
-        + '&age=' + age
-        + '&id=' + id;
+function updateUser(id) {
+    window.location.href = '/web/user/' + id;
 }

@@ -37,7 +37,7 @@
             <td><c:out value="${user.email}"/></td>
             <td><c:out value="${user.age}"/></td>
             <td><button onclick="deleteUser(${user.id})">删除</button></td>
-            <td><button onclick="updateUser(${user.id},'${user.name}','${user.gender}','${user.email}','${user.age}')">更新</button></td>
+            <td><button onclick="updateUser(${user.id})">更新</button></td>
         </tr>
     </c:forEach>
     </tbody>

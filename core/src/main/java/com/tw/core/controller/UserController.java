@@ -19,15 +19,32 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping(value = "/user", method = RequestMethod.GET)
-    public ModelAndView addUser(HttpServletRequest request,
-                                HttpServletResponse response) {
+    public ModelAndView userView(HttpServletRequest request,
+                                 HttpServletResponse response) {
 
         Cookie cookie = new Cookie("url", "user");
         response.addCookie(cookie);
 
-
         if (Utils.isLogin(request)) {
             return new ModelAndView("user");
+        } else {
+            return new ModelAndView("index");
+        }
+
+    }
+
+    @RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
+    public ModelAndView userView(@PathVariable int id,
+                                 HttpServletRequest request,
+                                 HttpServletResponse response) {
+
+        User user = userService.getUserById(id);
+
+        Cookie cookie = new Cookie("url", "user");
+        response.addCookie(cookie);
+
+        if (Utils.isLogin(request)) {
+            return new ModelAndView("user","user",user);
         } else {
             return new ModelAndView("index");
         }
@@ -69,7 +86,7 @@ public class UserController {
         }
 
     }
-    
+
     @RequestMapping(value = "/users", method = RequestMethod.POST)
     public ModelAndView addUser(@RequestParam String id,
                                 @RequestParam String name,

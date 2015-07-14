@@ -1,6 +1,5 @@
 package com.tw.core.util;
 
-import org.springframework.web.bind.annotation.RequestParam;
 import sun.misc.BASE64Encoder;
 
 import javax.servlet.http.Cookie;
